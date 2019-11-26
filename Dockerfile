@@ -1,5 +1,5 @@
 FROM gitpod/workspace-full:latest
 
 ## install: heroku cli
-USER root
+USER gitpod
 RUN  curl https://cli-assets.heroku.com/install-ubuntu.sh | sh

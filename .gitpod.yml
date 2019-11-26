@@ -3,7 +3,7 @@ ports:
     - port: 3000    
 
 tasks:
-    - init: sudo wget -qO- https://toolbelt.heroku.com/install-ubuntu.sh | sh
+    - init: sudo curl https://cli-assets.heroku.com/install-ubuntu.sh | sh
     - command: >
           pyenv global 3.7.4 &&
           pipenv shell

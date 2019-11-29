@@ -9,5 +9,5 @@ tasks:
           curl https://raw.githubusercontent.com/seebi/dircolors-solarized/master/dircolors.ansi-dark > ~/.dircolors &&
           curl https://gist.githubusercontent.com/climateamante/0bab006f7533eaa78fa4875653f592e9/raw/c48a6ec2ffa3ef6493329f1496da34a3973339ff/gitpod.profile > ~/.profile &&
           source ~/.profile &&
-          killall pipenv & pyenv global 3.7.4 &&
+          kill -9 `ps -u gitpod | grep 'pipenv' | awk '{print $1}'` & pyenv global 3.7.4 &&
           pipenv shell & source ~/.profile

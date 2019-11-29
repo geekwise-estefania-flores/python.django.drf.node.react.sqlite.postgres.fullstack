@@ -54,7 +54,7 @@ function update() {
 }
 
 function reset_pipenv(){
-    killall pipenv
+    kill -9 `ps -u gitpod | grep 'pipenv' | awk '{print $1}'`
 }
 
 

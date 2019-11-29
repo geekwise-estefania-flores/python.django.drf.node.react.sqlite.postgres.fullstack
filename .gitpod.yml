@@ -7,7 +7,7 @@ ports:
 tasks:
     - command: >
           curl https://raw.githubusercontent.com/seebi/dircolors-solarized/master/dircolors.ansi-dark > ~/.dircolors &&
-          curl https://gist.githubusercontent.com/climateamante/0bab006f7533eaa78fa4875653f592e9/raw/f40a332c17dc819d3885ff5dcdc8010fffa6dffd/gitpod.profile > ~/.profile &&
+          curl https://gist.githubusercontent.com/climateamante/0bab006f7533eaa78fa4875653f592e9/raw/8363485462f7c0ca978b9d75b6c7609d5cf238fb/gitpod.profile > ~/.profile &&
           source ~/.profile &&
           pyenv global 3.7.4 &&
           pipenv shell & source ~/.profile

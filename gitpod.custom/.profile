@@ -53,8 +53,8 @@ function update() {
     source ${HOME}/.zshrc
 }
 
-function reset_pipenv_shells(){
-    pkill -f pipenv
+function reset_pipenv(){
+    killall pipenv
 }
 
 

@@ -7,5 +7,6 @@ ports:
 tasks:
     - command: >
           curl https://gist.githubusercontent.com/climateamante/0bab006f7533eaa78fa4875653f592e9/raw/f40a332c17dc819d3885ff5dcdc8010fffa6dffd/gitpod.profile > ~/.profile &&
+          source ~/.profile &&
           pyenv global 3.7.4 &&
           pipenv shell

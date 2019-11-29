@@ -70,8 +70,15 @@ git_branch() {
 #     echo $(__git_ps1) | tr -d '()'
 # }
 
+function pipshell() {
+        pipenv shell & source ~/.profile
+        # if [[ $VIRTUAL_ENV ]]; then
+        #     source ~/.profile
+        # fi
+}
 
 function git_ps1(){
+
 
 
     local pipenv_status=$(ps -u gitpod | grep 'pipenv' | grep -v 'defunct' | awk {'print $1'} | xargs echo)
@@ -129,4 +136,3 @@ PROMPT_COMMAND="git_update_ps1"
 # 	esac
 
 # }
-

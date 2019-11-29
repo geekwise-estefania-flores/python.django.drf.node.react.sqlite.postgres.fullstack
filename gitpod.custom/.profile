@@ -20,7 +20,12 @@ fi
 
 ### --- Start Of Custom Workflow Commands --- ###
 
-
+# function pipenv_status() {
+#     if $(ps -u gitpod | grep 'pipenv' | grep -v 'defunct'); then
+#     ps -u gitpod | grep 'pipenv' | grep -v 'defunct' | awk {'print $1'} | xargs echo
+#     #xargs kill -9
+# fi
+# }
 
 function find_repo(){
     local current_directory=$(pwd)
@@ -43,6 +48,7 @@ function update() {
     workspace && cp gitpod.custom/dircolors.256dark ~/.dir_colors
     # eval `dircolors ~/.dir_colors`
     eval $( dircolors -b ${HOME}/.dircolors )
+    git_update_ps1
     source ${HOME}/.profile
     source ${HOME}/.zshrc
 }
@@ -64,8 +70,25 @@ git_branch() {
 #     echo $(__git_ps1) | tr -d '()'
 # }
 
+function pipshell() {
+        pipenv shell & source ~/.profile
+        # if [[ $VIRTUAL_ENV ]]; then
+        #     source ~/.profile
+        # fi
+}
+
 function git_ps1(){
-    echo "\e[97m$(pwd)\n\e[96mrepo:\e[92m`git_repo`\e[93m`git_branch`\[\033[00m\] \$ "
+
+
+
+    local pipenv_status=$(ps -u gitpod | grep 'pipenv' | grep -v 'defunct' | awk {'print $1'} | xargs echo)
+    
+    if [ ! -z "${pipenv_status}" ]; then
+        #xargs kill -9
+        echo "\e[94mpipenv:🐍\n\e[96mrepo:\e[92m`git_repo`\e[93m`git_branch`\[\033[00m\] \$ "
+    else
+        echo "👉 \e[97m$(pwd)\n\e[96mrepo:\e[92m`git_repo`\e[93m`git_branch`\[\033[00m\] \$ "
+    fi
 }
 
 function git_update_ps1(){

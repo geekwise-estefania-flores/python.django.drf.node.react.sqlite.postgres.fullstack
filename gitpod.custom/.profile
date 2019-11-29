@@ -53,7 +53,9 @@ function update() {
     source ${HOME}/.zshrc
 }
 
-
+function reset_pipenv_shells(){
+    pkill -f pipenv
+}
 
 
 function git_repo(){

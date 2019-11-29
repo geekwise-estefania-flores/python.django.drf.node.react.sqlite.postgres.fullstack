@@ -18,6 +18,11 @@ if [ -d "$HOME/.local/bin" ] ; then
 fi
 ### --- End Of GitPod Default --- ###
 
+export PIPENV_VENV_IN_PROJECT=true
+export PIP_USER=yes
+export PYTHONUSERBASE=/workspace/.pip-modules
+export PATH=$PYTHONUSERBASE/bin:$PATH
+
 ### --- Start Of Custom Workflow Commands --- ###
 
 # function pipenv_status() {

@@ -65,7 +65,7 @@ git_branch() {
 # }
 
 function git_ps1(){
-    echo "\e[92m`git_repo`/\e[93m`git_branch`\[\033[00m\] \$ "
+    echo "\e[97m$(pwd)\n\e[96mrepo:\e[92m`git_repo`\e[93m`git_branch`\[\033[00m\] \$ "
 }
 
 function git_update_ps1(){

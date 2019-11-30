@@ -44,10 +44,19 @@ function transfer(){
     cp $(find_repo)/gitpod.custom/.zshrc ~/
 }
 
+
+## needed for custom .profile on gitpod
+alias pippath=". $(find_repo)"'/.venv/bin/activate'
+
 function update() {
     
+    # export PYTHONPATH="${workspace_folder}/.venv/bin/activate"
+    # . /workspace/testing.drf/.venv/bin/activate
+
     if [ -d "/workspace/$(workspace_folder)/.venv" ]; then
-        export PYTHONPATH="${workspace_folder}.venv/bin/activate"
+        # echo 'pipenv .venv exisits'
+        . "$(find_repo)/.venv/bin/activate"
+        # export PYTHONPATH="${workspace_folder}.venv/bin/activate"
     fi
  
     workspace && cp gitpod.custom/dircolors.256dark ~/.dir_colors

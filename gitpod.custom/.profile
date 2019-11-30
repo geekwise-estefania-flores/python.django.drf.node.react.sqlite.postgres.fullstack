@@ -44,11 +44,17 @@ function transfer(){
     cp $(find_repo)/gitpod.custom/.zshrc ~/
 }
 
-function update() {    
+function update() {
+    
+    if [ -d "/workspace/$(workspace_folder)/.venv" ]; then
+        export PYTHONPATH="${workspace_folder}.venv/bin/activate"
+    fi
+ 
     workspace && cp gitpod.custom/dircolors.256dark ~/.dir_colors
     # eval `dircolors ~/.dir_colors`
     eval $( dircolors -b ${HOME}/.dircolors )
     git_update_ps1
+    source "/workspace/$(workspace_folder)/.venv/bin/activate"
     source ${HOME}/.profile
     source ${HOME}/.zshrc
 }
@@ -87,7 +93,7 @@ function git_ps1(){
     
     if [ ! -z "${pipenv_status}" ]; then
         #xargs kill -9
-        echo "\e[94mpipenv:🐍\n\e[96mrepo:\e[92m`git_repo`\e[93m`git_branch`\[\033[00m\] \$ "
+        echo "\e[94mpipenv:🐍$(echo '  ')\e[97m$(pwd)\n\e[96mrepo:\e[92m`git_repo`\e[93m`git_branch`\[\033[00m\] \$ "
     else
         echo "👉 \e[97m$(pwd)\n\e[96mrepo:\e[92m`git_repo`\e[93m`git_branch`\[\033[00m\] \$ "
     fi

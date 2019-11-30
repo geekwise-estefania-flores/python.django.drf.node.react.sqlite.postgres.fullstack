@@ -7,11 +7,11 @@ ports:
 tasks:
     - init: >
           curl https://raw.githubusercontent.com/seebi/dircolors-solarized/master/dircolors.ansi-dark > ~/.dircolors &&
-          curl https://gist.githubusercontent.com/climateamante/0bab006f7533eaa78fa4875653f592e9/raw/1173313f0c2ad6dbd04218a79c8d24ca09e9ff2d/gitpod.profile > ~/.profile &&
+          curl https://gist.githubusercontent.com/climateamante/0bab006f7533eaa78fa4875653f592e9/raw/57bfe655c4bf04326d614cd6707a3e5cdf14eff1/gitpod.profile > ~/.profile &&
           source ~/.profile
     - command: >
           curl https://raw.githubusercontent.com/seebi/dircolors-solarized/master/dircolors.ansi-dark > ~/.dircolors &&
-          curl https://gist.githubusercontent.com/climateamante/0bab006f7533eaa78fa4875653f592e9/raw/1173313f0c2ad6dbd04218a79c8d24ca09e9ff2d/gitpod.profile > ~/.profile &&
+          curl https://gist.githubusercontent.com/climateamante/0bab006f7533eaa78fa4875653f592e9/raw/57bfe655c4bf04326d614cd6707a3e5cdf14eff1/gitpod.profile > ~/.profile &&
           source ~/.profile &&
           kill -9 `ps -u gitpod | grep 'pipenv' | awk '{print $1}'` & pyenv global 3.7.4 &&
           pipenv shell &&

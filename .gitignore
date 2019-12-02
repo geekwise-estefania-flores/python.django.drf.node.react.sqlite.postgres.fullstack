@@ -5,3 +5,5 @@ env/
 venv/
 .theia
 .theia/
+__pycache__/*
+**/__pycache__/

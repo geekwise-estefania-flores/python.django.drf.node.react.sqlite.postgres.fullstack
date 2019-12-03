@@ -1,3 +1,7 @@
+## note:
+## source the environment variables needed to deploy to heroku
+import django_heroku
+
 import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -110,3 +114,7 @@ REST_FRAMEWORK = {
     'DEFAULT_PAGINATION_CLASS' : 'rest_framework.pagination.PageNumberPagination',
     'PAGE_SIZE' : 10
 }
+
+## note:
+## source the environment variables needed to deploy to heroku
+django_heroku.settings(locals())

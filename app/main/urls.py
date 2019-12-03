@@ -1,15 +1,15 @@
+from django.contrib import admin
 from django.urls import path, include
-from drf.views import views as drf_views
 from rest_framework import routers
+
+from drf import views as drf_views
 
 router = routers.DefaultRouter()
 router.register('users', drf_views.user_viewset )
 
 
 urlpatterns = [
-    path( 'api-users' include(router.urls) )
-    path('admin/', admin.site.urls),
-    
-    path( 'api-auth/', include('rest_framework.urls', namespace='rest_framework') )
-
+    path('', admin.site.urls),
+    path('api/', include(router.urls)),
+    path('auth', include('rest_framework.urls', namespace='rest_framework')),
 ]

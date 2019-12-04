@@ -102,9 +102,9 @@ function git_ps1(){
     
     if [ ! -z "${pipenv_status}" ]; then
         #xargs kill -9
-        echo "\e[94mpipenv:🐍$(echo '  ')\e[97m$(pwd)\n\e[96mrepo:\e[92m`git_repo`\e[93m`git_branch`\[\033[00m\] \$ "
+        echo "\e[94mpipenv:🐍$(echo '  ')\e[97m$(pwd)\n\e[96mrepo:\e[92m`git_repo`\e[93m`git_branch`\[\033[00m\]\n\$ "
     else
-        echo "👉 \e[97m$(pwd)\n\e[96mrepo:\e[92m`git_repo`\e[93m`git_branch`\[\033[00m\] \$ "
+        echo "👉 \e[97m$(pwd)\n\e[96mrepo:\e[92m`git_repo`\e[93m`git_branch`\[\033[00m\]\n\$ "
     fi
 }
 

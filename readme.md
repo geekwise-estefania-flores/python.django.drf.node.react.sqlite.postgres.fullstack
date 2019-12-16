@@ -1,3 +1,5 @@
+[herkou: python.djanog.drf.node.react.postgres.fullstack.app](https://django-drf-react-postgres-app.herokuapp.com)
+
 # fullstack curriculum: accelerated apprenticeship
 > wip
 
